@@ -1,0 +1,13 @@
+@import '../utils/mixins';
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    width: 200px;
+    margin-bottom: 56px;
+
+    @include breakpoint(tablet-horizontal) {
+        width: 300px;
+        margin-bottom: 72px;
+    }
+}

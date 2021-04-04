@@ -1,0 +1,51 @@
+@import '../utils/mixins';
+@import '../base/variables';
+
+.icons {
+    text-align: center;
+    font-size: 0;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .icon {
+        display: inline-block;
+        margin-left: 8px;
+        font-size: 1.2rem;
+
+        @include breakpoint(mobile) {
+            display: block;
+        }
+
+        @include breakpoint(tablet) {
+            margin-left: 16px;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #fff;
+
+            i.fab {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #ffffff;
+                border-radius: 50%;
+                width: 2.5rem;
+                height: 2.5rem;
+
+                &:hover {
+                    transition: all 150ms ease-in-out;
+                    border: 1px solid $soft-magenta;
+                    color: $soft-magenta;
+                }
+            }
+        }
+    }
+}
