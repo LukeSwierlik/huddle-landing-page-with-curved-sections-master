@@ -2,12 +2,23 @@
 
 .header {
     display: flex;
-    align-items: flex-start;
-    width: 200px;
-    margin-bottom: 56px;
+    justify-content: space-between;
+    margin: 1.75rem 1.5625rem 0;
+    align-items: center;
 
     @include breakpoint(tablet-horizontal) {
-        width: 300px;
-        margin-bottom: 72px;
+        margin: 4.875rem 4.875rem 0;
+    }
+
+    &__logo {
+        width: 6rem;
+
+        @include breakpoint(tablet-horizontal) {
+            width: 10rem;
+        }
+
+        @include breakpoint(tablet) {
+            width: 15rem;
+        }
     }
 }

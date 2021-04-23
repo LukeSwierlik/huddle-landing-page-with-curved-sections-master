@@ -1,0 +1,175 @@
+@import '../base/variables';
+@import '../utils/mixins';
+
+.article {
+    text-align: center;
+    position: relative;
+    margin-top: 2.5rem;
+    margin-bottom: 7rem;
+    padding: 1.875rem;
+
+    @include breakpoint(mobile-horizontal) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        text-align: left;
+        margin-top: 13rem;
+    }
+
+    &__img {
+        height: 13.4375rem;
+        background-size: contain;
+
+        @include breakpoint(tablet) {
+            height: 26rem;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-family: $font-family-poppins;
+        margin-top: 5rem;
+        font-weight: 700;
+
+        @include breakpoint(mobile-horizontal) {
+            font-size: 2rem;
+        }
+
+        @include breakpoint(tablet) {
+            font-size: 2.8125rem;
+        }
+    }
+
+    &__description {
+        margin-top: 1.25rem;
+        padding-bottom: 2rem;
+        font-weight: 600;
+        color: #00252e;
+        line-height: 1.7;
+
+        @include breakpoint(mobile-horizontal) {
+            font-size: .875rem;
+        }
+
+        @include breakpoint(tablet) {
+            font-size: 1rem;
+        }
+    }
+
+    &__container {
+        @include breakpoint(mobile-horizontal) {
+            flex-basis: 100%;
+        }
+
+        @include breakpoint(tablet) {
+            padding: 0 6.25rem 6.25rem;
+        }
+    }
+
+    &.grow {
+        background-color: $very-pale-blue;
+
+        &::before {
+            content: '';
+            background: url("#{$images-path}/bg-section-top-mobile-1.svg") top no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: -6.1875rem;
+            left: 0;
+            width: 100%;
+            height: 6.25rem;
+
+            @include breakpoint(mobile-horizontal) {
+                background: url("#{$images-path}/bg-section-top-desktop-1.svg") top no-repeat;
+                top: -9.1875rem;
+                height: 9.25rem;
+                position: absolute;
+                background-size: 100% 100%;
+            }
+        }
+
+        &::after {
+            content: '';
+            background: url("#{$images-path}/bg-section-bottom-mobile-1.svg") top no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            bottom: -3.0625rem;
+            left: 0;
+            width: 100%;
+            height: 3.125rem;
+
+            @include breakpoint(mobile-horizontal) {
+                background: url("#{$images-path}/bg-section-bottom-desktop-1.svg") top no-repeat;
+                bottom: -9.0625rem;
+                height: 9.125rem;
+                position: absolute;
+                background-size: 100% 100%;
+            }
+        }
+
+        .article__img {
+            background: url("#{$images-path}/illustration-grow-together.svg") center no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &.flow {
+        @include breakpoint(mobile-horizontal) {
+            flex-direction: row;
+        }
+
+        .article__img {
+            background: url("#{$images-path}/illustration-flowing-conversation.svg") center no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &.user {
+        background-color: $very-pale-blue;
+
+        &::before {
+            content: '';
+            background: url("#{$images-path}/bg-section-top-mobile-2.svg") top no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: -6.1875rem;
+            left: 0;
+            width: 100%;
+            height: 6.25rem;
+
+            @include breakpoint(mobile-horizontal) {
+                background: url("#{$images-path}/bg-section-top-desktop-2.svg") top no-repeat;
+                top: -9.1875rem;
+                height: 9.25rem;
+                position: absolute;
+                background-size: 100% 100%;
+            }
+        }
+
+        &::after {
+            content: '';
+            background: url("#{$images-path}/bg-section-bottom-mobile-2.svg") top no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            bottom: -6.1875rem;
+            left: 0;
+            width: 100%;
+            height: 6.25rem;
+
+            @include breakpoint(mobile-horizontal) {
+                background: url("#{$images-path}/bg-section-bottom-desktop-2.svg") top no-repeat;
+                bottom: -9.0625rem;
+                height: 9.125rem;
+                position: absolute;
+                background-size: 100% 100%;
+            }
+        }
+
+        .article__img {
+            background: url("#{$images-path}/illustration-your-users.svg") center no-repeat;
+            background-size: contain;
+
+        }
+    }
+}

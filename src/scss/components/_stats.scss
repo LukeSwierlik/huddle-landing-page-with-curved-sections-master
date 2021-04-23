@@ -1,0 +1,58 @@
+@import '../utils/mixins';
+@import '../base/variables';
+
+.main__stats {
+    display: inline-flex;
+    flex-direction: column;
+    margin: auto;
+
+    @include breakpoint(mobile-horizontal) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .stats-card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4.375rem;
+
+        &__icon {
+            @include breakpoint(tablet) {
+                width: 3.125rem;
+                height: 3.125rem;
+            }
+        }
+
+        &__title {
+            font-size: 3.875rem;
+            font-weight: 800;
+            color: $very-dark-cyan;
+            text-align: left;
+
+            @include breakpoint(mobile-horizontal) {
+                font-size: 4.5625rem;
+            }
+        }
+
+        &:nth-child(2) {
+            span {
+                font-size: 3.375rem;
+
+                @include breakpoint(mobile-horizontal) {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    font-size: 4.5625rem;
+                }
+            }
+        }
+
+        &__subtitle {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: $very-dark-cyan;
+            line-height: 1.7;
+        }
+    }
+}
